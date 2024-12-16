@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入/註冊</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #fa709a, #fee140);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            width: 400px;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: calc(100% - 30px); /* Adjust width to fit within padding */
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(to right, #fa709a, #fee140);
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(to right, #fa709a, #f468b7, #d25a7c);
+            transform: scale(1.05);
+        }
+
+        .divider {
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '或';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 0 10px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>登入</h2>
+        <form action="login.php" method="post">
+            <label for="username">用戶名：</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">密碼：</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="登入">
+        </form>
+
+        <div class="divider"></div>
+
+        <h2>註冊</h2>
+        <form action="register.php" method="post">
+            <label for="new_username">用戶名：</label>
+            <input type="text" id="new_username" name="new_username" required>
+            <label for="new_password">密碼：</label>
+            <input type="password" id="new_password" name="new_password" required>
+            <input type="submit" value="註冊">
+        </form>
+    </div>
+</body>
+</html>
